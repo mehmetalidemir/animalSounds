@@ -57,6 +57,16 @@ class AnimalsViewModel {
         Animal(id: .elephant, name: "Elephant", info: "Elephants are the largest land mammals on earth and have distinctly massive bodies, large ears, and long trunks.", group: .init(name: "Mammals", groupType: .group), sound: "TRUMPET"),
         
         Animal(id: .snake, name: "Snake", info: "Snakes are elongated, limbless, carnivorous reptiles of the suborder Serpentes.", group: .init(name: "Reptiles", groupType: .group), sound: "HISS"),
+        
+        Animal(id: .lion, name: "Lion", info: "Lions are large mammal of the Felidae (cat) family.", group: .init(name: "Mammals", groupType: .group), sound: "ROAR"),
+        
+        Animal(id: .wolf, name: "Wolf", info: "Wolves live and hunt in packs of around six to ten animals. They are known to roam large distances, perhaps 12 miles in a single day.", group: .init(name: "Mammals", groupType: .group), sound: "HOWL"),
+        
+        Animal(id: .ostrich, name: "Ostrich", info: "Ostrich is large flightless bird found only in open country in Africa.", group: .init(name: "Birds", groupType: .group), sound: "CHIRP"),
+        
+        Animal(id: .seal, name: "Seal", info: "Seals are a widely distributed and diverse clade of carnivorous, fin-footed, semiaquatic, mostly marine mammals.", group: .init(name: "Mammals", groupType: .group), sound: "BARK"),
+        
+        Animal(id: .camel, name: "Camel", info: "Camels are working animals especially suited to their desert habitat and are a vital means of transport for passengers and cargo.", group: .init(name: "Mammals", groupType: .group), sound: "GRUNTS"),
     ]
     
 

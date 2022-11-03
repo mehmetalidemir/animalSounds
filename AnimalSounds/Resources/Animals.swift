@@ -18,7 +18,7 @@ enum AnimalType {
     case bee
     case cow
     case chicken
-    
+
     case sheep
     case monkey
     case deer
@@ -29,6 +29,12 @@ enum AnimalType {
     case donkey
     case elephant
     case snake
+
+    case lion
+    case wolf
+    case ostrich
+    case seal
+    case camel
 }
 
 extension AnimalType {
@@ -75,8 +81,18 @@ extension AnimalType {
             return UIImage(named: "elephant_ic")!
         case .snake:
             return UIImage(named: "snake_ic")!
+        case .lion:
+            return UIImage(named: "lion_ic")!
+        case .wolf:
+            return UIImage(named: "wolf_ic")!
+        case .ostrich:
+            return UIImage(named: "ostrich_ic")!
+        case .seal:
+            return UIImage(named: "seal_ic")!
+        case .camel:
+            return UIImage(named: "camel_ic")!
         }
-    
+
     }
 
     var background: UIColor {
@@ -121,6 +137,16 @@ extension AnimalType {
             return UIColor(named: "elephant_bg")!
         case .snake:
             return UIColor(named: "snake_bg")!
+        case .lion:
+            return UIColor(named: "lion_bg")!
+        case .wolf:
+            return UIColor(named: "wolf_bg")!
+        case .ostrich:
+            return UIColor(named: "ostrich_bg")!
+        case .seal:
+            return UIColor(named: "seal_bg")!
+        case .camel:
+            return UIColor(named: "camel_bg")!
         }
     }
 
@@ -166,6 +192,16 @@ extension AnimalType {
             return "elephant"
         case .snake:
             return "snake"
+        case .lion:
+            return "lion"
+        case .wolf:
+            return "wolf"
+        case .ostrich:
+            return "ostrich"
+        case .seal:
+            return "seal"
+        case .camel:
+            return "camel"
         }
     }
 }

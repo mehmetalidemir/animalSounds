@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		32E46BD62AC489AB068D9558 /* Pods_AnimalSounds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DFE0471F1CC8C520296DCD /* Pods_AnimalSounds.framework */; };
+		740E4D532913EC3B00307B4A /* lion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 740E4D522913EC3B00307B4A /* lion.mp3 */; };
+		740E4D552913EF1600307B4A /* wolf.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 740E4D542913EF1600307B4A /* wolf.mp3 */; };
+		740E4D572913F1EC00307B4A /* ostrich.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 740E4D562913F1EC00307B4A /* ostrich.mp3 */; };
+		740E4D592913F2E000307B4A /* seal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 740E4D582913F2E000307B4A /* seal.mp3 */; };
+		740E4D5B2913F4E300307B4A /* camel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 740E4D5A2913F4E300307B4A /* camel.mp3 */; };
 		7440ACA32905C0B90093E243 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440ACA22905C0B90093E243 /* AnimalTableViewCell.swift */; };
 		7440ACA52906CB6F0093E243 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7440ACA42906CB6F0093E243 /* Assets.swift */; };
 		7447EA742907FE9600D1C28F /* dog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7447EA732907FE9600D1C28F /* dog.mp3 */; };
@@ -44,6 +49,11 @@
 
 /* Begin PBXFileReference section */
 		6C846C47BBC294851AC86860 /* Pods-AnimalSounds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalSounds.debug.xcconfig"; path = "Target Support Files/Pods-AnimalSounds/Pods-AnimalSounds.debug.xcconfig"; sourceTree = "<group>"; };
+		740E4D522913EC3B00307B4A /* lion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lion.mp3; sourceTree = "<group>"; };
+		740E4D542913EF1600307B4A /* wolf.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wolf.mp3; sourceTree = "<group>"; };
+		740E4D562913F1EC00307B4A /* ostrich.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ostrich.mp3; sourceTree = "<group>"; };
+		740E4D582913F2E000307B4A /* seal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = seal.mp3; sourceTree = "<group>"; };
+		740E4D5A2913F4E300307B4A /* camel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = camel.mp3; sourceTree = "<group>"; };
 		7440ACA22905C0B90093E243 /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
 		7440ACA42906CB6F0093E243 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		7447EA732907FE9600D1C28F /* dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dog.mp3; sourceTree = "<group>"; };
@@ -158,14 +168,19 @@
 		745CE4C32904775300559D02 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				740E4D542913EF1600307B4A /* wolf.mp3 */,
+				740E4D522913EC3B00307B4A /* lion.mp3 */,
 				74AA4C25290AC2D800816B39 /* snake.mp3 */,
 				74AA4C23290ABF8100816B39 /* elephant.mp3 */,
+				740E4D5A2913F4E300307B4A /* camel.mp3 */,
 				74AA4C21290ABBF000816B39 /* donkey.mp3 */,
 				74AA4C1F290AB92A00816B39 /* rooster.mp3 */,
 				74AA4C1D290AB6CA00816B39 /* turkey.mp3 */,
 				74AA4C1B290AB62E00816B39 /* rabbit.mp3 */,
 				74AA4C19290AB40400816B39 /* pig.mp3 */,
+				740E4D562913F1EC00307B4A /* ostrich.mp3 */,
 				74AA4C17290AAFBD00816B39 /* sheep.mp3 */,
+				740E4D582913F2E000307B4A /* seal.mp3 */,
 				74AA4C15290AAFB800816B39 /* monkey.mp3 */,
 				74AA4C13290AAFB100816B39 /* deer.mp3 */,
 				74E18E9C29097C64007D898E /* chicken.mp3 */,
@@ -278,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				745CE4BB29046D9000559D02 /* LaunchScreen.storyboard in Resources */,
+				740E4D592913F2E000307B4A /* seal.mp3 in Resources */,
 				74AA4C1C290AB62E00816B39 /* rabbit.mp3 in Resources */,
 				74AA4C1E290AB6CA00816B39 /* turkey.mp3 in Resources */,
 				74AA4C26290AC2D800816B39 /* snake.mp3 in Resources */,
@@ -291,13 +307,17 @@
 				74E18E95290969C6007D898E /* duck.mp3 in Resources */,
 				74AA4C14290AAFB100816B39 /* deer.mp3 in Resources */,
 				74AA4C20290AB92A00816B39 /* rooster.mp3 in Resources */,
+				740E4D572913F1EC00307B4A /* ostrich.mp3 in Resources */,
+				740E4D552913EF1600307B4A /* wolf.mp3 in Resources */,
 				74E18E9729096CA2007D898E /* fox.mp3 in Resources */,
 				74E3457029082DCF0053F027 /* cat.mp3 in Resources */,
 				74AA4C22290ABBF000816B39 /* donkey.mp3 in Resources */,
 				74AA4C18290AAFBD00816B39 /* sheep.mp3 in Resources */,
+				740E4D532913EC3B00307B4A /* lion.mp3 in Resources */,
 				7447EA742907FE9600D1C28F /* dog.mp3 in Resources */,
 				74E18E9D29097C64007D898E /* chicken.mp3 in Resources */,
 				74E18E9B29097B04007D898E /* cow.mp3 in Resources */,
+				740E4D5B2913F4E300307B4A /* camel.mp3 in Resources */,
 				74AA4C16290AAFB800816B39 /* monkey.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
