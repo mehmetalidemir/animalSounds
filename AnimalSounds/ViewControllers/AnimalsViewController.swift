@@ -29,7 +29,6 @@ class AnimalsViewController: UIViewController {
         tv.separatorStyle = .none
         tv.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tv.register(AnimalTableViewCell.self, forCellReuseIdentifier: AnimalTableViewCell.cellId)
-
         return tv
     }()
     
@@ -52,9 +51,14 @@ class AnimalsViewController: UIViewController {
         self.view.backgroundColor = .white
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        banner.frame = CGRect(x:  0, y: view.frame.height-50 , width: view.frame.size.width, height: 50).integral
+        banner.frame = CGRect(x:  0, y: view.frame.height-100 , width: view.frame.size.width, height: 100).integral
     }
 
 }
