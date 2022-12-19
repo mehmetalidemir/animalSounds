@@ -1,4 +1,4 @@
- //
+//
 //  ChantsViewController.swift
 //  Animal Sounds
 //
@@ -17,7 +17,7 @@ class AnimalsViewController: UIViewController {
         banner.backgroundColor = .secondarySystemBackground
         return banner
     }()
-    
+
     // MARK - UI
 
     private lazy var tableVw: UITableView = {
@@ -31,9 +31,17 @@ class AnimalsViewController: UIViewController {
         tv.register(AnimalTableViewCell.self, forCellReuseIdentifier: AnimalTableViewCell.cellId)
         return tv
     }()
-    
+
     private lazy var animalsViewModel = AnimalsViewModel()
     private lazy var audioManagerViewModel = AudiManagerViewModel()
+
+    // arama sonuçlarını güncelleyen dizi
+    private var filteredAnimals = [Animal]()
+
+    // arama controller'ı
+    let searchController = UISearchController(searchResultsController: nil)
+
+
     // MARK - Life Cycle
 
     override func loadView() {
@@ -49,16 +57,22 @@ class AnimalsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .white
+
+        // arama controller'ını table view'a ekleyin
+        tableVw.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Animals"
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        banner.frame = CGRect(x:  0, y: view.frame.height-100 , width: view.frame.size.width, height: 100).integral
+        banner.frame = CGRect(x: 0, y: view.frame.height - 100, width: view.frame.size.width, height: 100).integral
     }
 
 }
@@ -66,7 +80,7 @@ class AnimalsViewController: UIViewController {
 private extension AnimalsViewController {
 
     func setup() {
-        
+
         self.navigationController?.navigationBar.topItem?.title = "🐾 Animals"
         self.navigationController?.navigationBar.prefersLargeTitles = true
 
@@ -83,30 +97,74 @@ private extension AnimalsViewController {
     }
 }
 
-// MARK - UiTableViewDataSource
+
+// MARK - UITableViewDataSource
 
 extension AnimalsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            // arama yapılıyorsa filtrelenmiş hayvanları göster
+            return filteredAnimals.count
+        }
+        // arama yapılmıyorsa tüm hayvanları göster
         return animalsViewModel.animals.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let animal = animalsViewModel.animals[indexPath.row]
-      
+        let animal: Animal
+        if isFiltering() {
+            // arama yapılıyorsa filtrelenmiş hayvanları kullan
+            animal = filteredAnimals[indexPath.row]
+        } else {
+            // arama yapılmıyorsa tüm hayvanları kullan
+            animal = animalsViewModel.animals[indexPath.row]
+        }
+
         let cell = tableVw.dequeueReusableCell(withIdentifier: AnimalTableViewCell.cellId, for: indexPath) as! AnimalTableViewCell
         cell.configure(with: animal, delegate: self)
         return cell
-
-      
     }
-
 }
 
-extension AnimalsViewController: AnimalTableViewCellDelegate{
-    
+extension AnimalsViewController: AnimalTableViewCellDelegate {
+
     func didTapPlayback(for animal: Animal) {
         audioManagerViewModel.playback(animal)
         animalsViewModel.togglePlayback(for: animal)
         tableVw.reloadData()
     }
+}
+
+
+// MARK: - UISearchResultsUpdating
+
+extension AnimalsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+    }
+}
+
+private extension AnimalsViewController {
+
+// arama metniyle hayvanları filtrele
+    func filterContentForSearchText(_ searchText: String) {
+        filteredAnimals = animalsViewModel.animals.filter { (animal: Animal) -> Bool in
+            return animal.name.lowercased().contains(searchText.lowercased())
+        }
+
+        tableVw.reloadData()
+    }
+
+// arama yapılıyor mu kontrol et
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+
+// arama barının boş olup olmadığını kontrol et
+    func searchBarIsEmpty() -> Bool {
+        // arama barı boşsa false döndür, değilse true
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+
 }

@@ -35,6 +35,12 @@ enum AnimalType {
     case ostrich
     case seal
     case camel
+    
+    case panda
+    case giraffe
+    case zebra
+    case tiger
+    case rhinoceros
 }
 
 extension AnimalType {
@@ -91,6 +97,16 @@ extension AnimalType {
             return UIImage(named: "seal_ic")!
         case .camel:
             return UIImage(named: "camel_ic")!
+        case .panda:
+            return UIImage(named: "panda_ic")!
+        case .giraffe:
+            return UIImage(named: "giraffe_ic")!
+        case .zebra:
+            return UIImage(named: "zebra_ic")!
+        case .tiger:
+            return UIImage(named: "tiger_ic")!
+        case .rhinoceros:
+            return UIImage(named: "rhinoceros_ic")!
         }
 
     }
@@ -147,6 +163,16 @@ extension AnimalType {
             return UIColor(named: "seal_bg")!
         case .camel:
             return UIColor(named: "camel_bg")!
+        case .panda:
+            return UIColor(named: "panda_bg")!
+        case .giraffe:
+            return UIColor(named: "giraffe_bg")!
+        case .zebra:
+            return UIColor(named: "zebra_bg")!
+        case .tiger:
+            return UIColor(named: "tiger_bg")!
+        case .rhinoceros:
+            return UIColor(named: "rhinoceros_bg")!
         }
     }
 
@@ -202,6 +228,16 @@ extension AnimalType {
             return "seal"
         case .camel:
             return "camel"
+        case .panda:
+            return "panda"
+        case .giraffe:
+            return "giraffe"
+        case .zebra:
+            return "zebra"
+        case .tiger:
+            return "tiger"
+        case .rhinoceros:
+            return "rhinoceros"
         }
     }
 }

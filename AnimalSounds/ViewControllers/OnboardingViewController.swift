@@ -46,7 +46,7 @@ class OnboardingViewController: UIViewController {
         view.setTitle("Skip", for: .normal)
         view.addTarget(self, action: #selector(finishOnoardingTapped), for: .touchUpInside)
         view.titleLabel?.font = (UIDevice.current.userInterfaceIdiom == .pad) ?
-        
+
         UIFont.boldSystemFont(ofSize: 35)
         :
             UIFont.boldSystemFont(ofSize: 18)
