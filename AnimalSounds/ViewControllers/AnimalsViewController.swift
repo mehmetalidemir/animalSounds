@@ -62,7 +62,7 @@ class AnimalsViewController: UIViewController {
         tableVw.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = " Search Animals"
+        searchController.searchBar.placeholder = "Search Animals"
     }
 
     override func viewWillAppear(_ animated: Bool) {
