@@ -97,7 +97,6 @@ private extension AnimalsViewController {
     }
 }
 
-
 // MARK - UITableViewDataSource
 
 extension AnimalsViewController: UITableViewDataSource {
